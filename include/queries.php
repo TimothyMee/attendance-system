@@ -34,6 +34,10 @@
 
         }
 
+    function getPath(){
+        return $path  = 'http://localhost/myWork/fingerprintSample/code/';
+    }
+
     function getDevice() {
 
 		$dbconn = DB::getInstance();

@@ -138,9 +138,10 @@ echo "<a href='finspot:FingerspotReg;$verification2'>
 
 				$finger 			= $queriesObject->getUserFinger($row['user_id']);
 				$register			= '';
+				$path               = $queriesObject->getPath();
 				$verification		= '';
-				$url_register		= base64_encode("http://localhost/myWork/fingerprintSample/code/register.php?user_id=".$row['user_id']);
-				$url_verification	= base64_encode("http://localhost/myWork/fingerprintSample/code/verification.php?user_id=".$row['user_id']);
+				$url_register		= base64_encode($path."register.php?user_id=".$row['user_id']);
+				$url_verification	= base64_encode($path."verification.php?user_id=".$row['user_id']);
 
 				if (count($finger) == 0) {
 

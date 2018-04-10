@@ -27,7 +27,7 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<button type="button" class="btn btn-success" onclick="load('device.php?action=create')">Add</button>
+				<button type="button" class="btn btn-primary" onclick="load('device.php?action=create')">Add</button>
 			</div>
 		</div>
 		<br>
@@ -43,12 +43,12 @@
 						."<table class='table table-bordered table-hover'>"
 								."<thead>"
 									."<tr>"
-										."<th class='col-md-3'>Device Name</th>"
-										."<th class='col-md-2'>Device SN</th>"
-										."<th class='col-md-2'>Device VC</th>"
-										."<th class='col-md-2'>Device AC</th>"
-										."<th class='col-md-2'>Device VKEY</th>"
-										."<th class='col-md-1'>Action</th>"
+										."<th class=''>Device Name</th>"
+										."<th class=''>Device SN</th>"
+										."<th class=''>Device VC</th>"
+										."<th class=''>Device AC</th>"
+										."<th class=''>Device VKEY</th>"
+										."<th class=''>Action</th>"
 									."</tr>"
 								."</thead>"
 								."<tbody>";
@@ -104,6 +104,10 @@
 
 				</div>
 				<div class="col-md-4">
+                    <div class="card text-white bg-primary mb-3">
+                        <div class="card-header">Add Device</div>
+                    </div>
+                    <hr>
 					<div class="form-group">
 						<label for="device_name">Device Name</label>
 						<input type="text"  id="device_name" class="form-control" placeholder="Enter Name">
@@ -125,7 +129,7 @@
 						<input type="text" id="vkey" class="form-control" placeholder="Enter VKEY">
 					</div>
 					<a class="btn btn-default" onclick="load('device.php?action=index')">Back</a>
-					<button type="submit" class="btn btn-success" onclick="device_store()">Save</button>
+					<button type="submit" class="btn btn-primary    " onclick="device_store()">Save</button>
 				</div>
 				<div class="col-md-4">
 

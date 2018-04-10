@@ -23,9 +23,9 @@
 						."<table class='table table-bordered table-hover'>"
 								."<thead>"
 									."<tr>"
-										."<th class='col-md-4'>Log Time</th>"
-										."<th class='col-md-4'>Username</th>"
-										."<th class='col-md-4'>Data</th>"
+										."<th class=''>Log Time</th>"
+										."<th class=''>Username</th>"
+										."<th class=''>Data</th>"
 									."</tr>"
 								."</thead>"
 								."<tbody>";

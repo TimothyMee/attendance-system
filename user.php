@@ -110,7 +110,7 @@ echo "<a href='finspot:FingerspotReg;$verification2'>
 
 		<div class="row">
 			<div class="col-md-12">
-				<button type="button" class="btn btn-success" onclick="load('user.php?action=create')">Add</button>
+				<button type="button" class="btn btn-primary" onclick="load('user.php?action=create')">Add</button>
 			</div>
 		</div>
 		<br>
@@ -126,10 +126,10 @@ echo "<a href='finspot:FingerspotReg;$verification2'>
 						."<table class='table table-bordered table-hover'>"
 								."<thead>"
 									."<tr>"
-										."<th class='col-md-4'>User ID</th>"
-										."<th class='col-md-4'>Username</th>"
-										."<th class='col-md-2'>Template</th>"
-										."<th class='col-md-2'>Action</th>"
+										."<th class=''>User ID</th>"
+										."<th class=''>Username</th>"
+										."<th class=''>Template</th>"
+										."<th class=''>Action</th>"
 									."</tr>"
 								."</thead>"
 								."<tbody>";
@@ -201,6 +201,10 @@ echo "<a href='finspot:FingerspotReg;$verification2'>
 
 			</div>
 			<div class="col-md-4">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-header">Add User</div>
+                </div>
+                <hr>
 				<div class="form-group">
 					<label for="user_name">Username</label>
 					<input type="text"  id="user_name" class="form-control" placeholder="Enter Username">
@@ -218,7 +222,7 @@ echo "<a href='finspot:FingerspotReg;$verification2'>
 
 
 				<a class="btn btn-default" onclick="load('user.php?action=index')">Back</a>
-				<button type="submit" class="btn btn-success" onclick="user_store()">Save</button>
+				<button type="submit" class="btn btn-primary" onclick="user_store()">Save</button>
 			</div>
 			<div class="col-md-4">
 

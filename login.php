@@ -97,9 +97,9 @@
 
                         <input type='hidden' value='' name='userid' id='hiddenUserID'>
 				</div>
-				<a href="" id="button_login" type="submit" class="btn btn-success" name="login">Login</a>
+				<a href="" id="button_login" type="submit" class="btn btn-primary" name="login">Login</a>
 
-                <h5 style="float: right">Got Confirmation Code? <a href="#" onclick="continueLogin()">Continue Login</a></h5>
+<!--                <h5 style="float: right">Got Confirmation Code? <a href="#" onclick="continueLogin()">Continue Login</a></h5>-->
 			</div>
 			<div class="col-md-4">
 

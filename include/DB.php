@@ -7,8 +7,8 @@
 		public function __construct(){
 			$servername = "localhost";
 			$username = "root";
-			$password = "";
-			$dbname = "verification";
+			$password = "12345";
+			$dbname = "attendance";
 
 			try {
 				    $this->pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

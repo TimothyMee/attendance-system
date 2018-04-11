@@ -83,7 +83,7 @@
 								$result = mysql_query($strSQL);*/
 
 								$result = $queriesObject->selectFinger();
-								$base_path = 'http://localhost/myWork/fingerprintSample/code/';
+								$base_path = $queriesObject->getPath();
 
 								foreach ($result as $row){
 

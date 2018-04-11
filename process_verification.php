@@ -12,7 +12,7 @@ if (isset($_POST['VerPas']) && !empty($_POST['VerPas'])) {
     $vStamp = $data[1];
     $time = $data[2];
     $sn = $data[3];
-    $base_path = 'http://localhost/myWork/fingerprintSample/code/';
+    $base_path = $queriesObject->getPath();
 
     $fingerData = $queriesObject->getUserFinger($user_id);
     $device = $queriesObject->getDeviceBySn($sn);

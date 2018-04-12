@@ -1,1 +1,2 @@
-include/DB.php
+/include/DB.php
+/database/verification.sql

@@ -8,29 +8,6 @@
 
 	function __construct()
         {
-            /*$dbconn = DB::getInstance();
-
-            $currentTime = new DateTime();
-
-            $sql = "SELECT * FROM passcode WHERE status=0";
-            $final = $dbconn->pdo->prepare($sql);
-            $final->execute();
-
-            while($result = $final->fetch()){
-                $oldTime = new DateTime($result['created_at']);
-                $timeDiff = $currentTime->diff($oldTime);
-
-                $minutes = $timeDiff->days * 24 * 60;
-                $minutes += $timeDiff->h * 60;
-                $minutes += $timeDiff->i;
-
-                if ($minutes > 10){
-                    $sql2 = "UPDATE passcode SET status=1 WHERE id=".$result['id'];
-                    $final2 = $dbconn->pdo->prepare($sql2);
-                    $final2->execute();
-                }
-            }*/
-
 
         }
 

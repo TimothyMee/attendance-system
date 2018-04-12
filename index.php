@@ -27,6 +27,17 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link" onclick="load('log.php?action=index')">Log</a>
                 </li>
+                <li class="nav-item">
+                    <div class="col-md-2 dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                            Theme
+                        </button>
+                        <div class="container dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="setTheme('dark')" id="dark">Dark</a>
+                            <a class="dropdown-item" href="#" onclick="setTheme('light')" id="light">Light</a>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </nav>
 
@@ -68,6 +79,13 @@
 			console.log('ready to use...');
 
 			load('device.php?action=index');
+
+            var theme = localStorage.getItem('theme');
+
+            if (theme == 'dark'){
+                $('body').css('background-image', 'url("assets/image/black_paper.png")');
+                $('body').css('color', 'white');
+            }
 
 		});
 	</script>

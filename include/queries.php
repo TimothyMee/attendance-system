@@ -8,7 +8,7 @@
 
 	function __construct()
         {
-            $dbconn = DB::getInstance();
+            /*$dbconn = DB::getInstance();
 
             $currentTime = new DateTime();
 
@@ -29,7 +29,7 @@
                     $final2 = $dbconn->pdo->prepare($sql2);
                     $final2->execute();
                 }
-            }
+            }*/
 
 
         }
@@ -402,19 +402,8 @@
 		try{
             $final = $dbconn->pdo->prepare($sql);
             $final->execute();
-            $this->sendCode($user_name,$time);
-
-            /*if ($final->execute()){
-                $this->sendCode($user_name);
-                die();
-            }*/
-            die(header("Location: http://localhost/myWork/fingerprintSample/code/messages.php"));
-
-            /*$location = "http://localhost/myWork/fingerprintSample/code/messages.php";
-            return header("location: ".$location);
-
-            return true;*/
-
+            $this->message($user_name,$time);
+            die(header("Location: http://localhost/myWork/fingerprintSample/code/index.php"));
         }
         catch (Exception $e){
             return "Error insert log data!";
@@ -422,7 +411,7 @@
 		
 	}
 
-	function sendCode($user_name, $time){
+	function message($user_name, $time){
         $dbconn = DB::getInstance();
         $sql1 = "SELECT * FROM users WHERE user_name= '".$user_name."' ";
 
@@ -431,55 +420,16 @@
 
         $result1 = $final1->fetch();
 
-        /*Randomly generate a string*/
-            $length = 7;
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-
         $to = $result1['telephone'];
-        $message = 'This is your Confirmation Code '.$randomString;
-        $messageStatus = $this->sendMessage('Veri-System',$to,$message);
+        $message = 'This user "'.$user_name.'"Logged in at '.$time;
+        return $messageStatus = $this->sendMessage('Att-System',$to,$message);
 
-        if($messageStatus){
-            $sql = "INSERT INTO passcode SET id = '',user_id='".$result1['user_id']."', 
-                    passcode='".$randomString."',created_at= '".$time."', status=0";
-            $final = $dbconn->pdo->prepare($sql);
-            if($final->execute()){
-
-            }
-        }
-    }
-
-    function confirmCode($data){
-	    $dbconn = DB::getInstance();
-        $status = 0;
-	    $sql = "SELECT * FROM passcode WHERE passcode ='".$data['code']."' AND user_id='".$data['user_id']."' AND status='".$status."'";
-
-	    try{
-	        $final = $dbconn->pdo->prepare($sql);
-	        $final->execute();
-	        $result = $final->fetch();
-
-	        if($result){
-                $sql2 = "UPDATE passcode SET status= 1 WHERE id='". $result['id']."'";
-                $final2 = $dbconn->pdo->prepare($sql2);
-                $final2->execute();
-                return true;
-            }
-            else{
-	            return false;
-            }
-        }catch (Exception $e){}
     }
 
     public function sendMessage($senderName, $phoneNumbers, $message){
-            $apikey = 'c33dd10809921a87948f5357edf993d0efec32ef';
-            $url = "http://api.ebulksms.com:8080/sendsms.json";
-            $username = 'timothy33.tf@gmail.com';
+            $apikey = 'API_KEY';
+            $url = "YOUR SMS PROVIDER API";
+            $username = 'USER_NAME';
             $flash = 0 ;
             $message = stripslashes($message);
             $phoneArray = explode(',', $phoneNumbers);

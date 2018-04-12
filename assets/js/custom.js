@@ -70,3 +70,10 @@ function push(page) {
 	});
 
 }
+
+function setTheme(theme) {
+    if (localStorage) {
+        localStorage.setItem('theme', theme);
+        location.reload();
+    }
+}
